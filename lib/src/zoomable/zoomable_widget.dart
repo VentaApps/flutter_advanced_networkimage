@@ -220,6 +220,7 @@ class _ZoomableWidgetState extends State<ZoomableWidget> {
       _clampedOffset = Offset.zero;
     }
     setState(() => _pan = _clampedOffset);
+    _handleDoubleTap();
   }
 
   Size get _boundarySize {
