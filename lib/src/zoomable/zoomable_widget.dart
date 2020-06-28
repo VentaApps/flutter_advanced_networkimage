@@ -154,8 +154,13 @@ class _ZoomableWidgetState extends State<ZoomableWidget> {
     _curve = Curves.easeOut;
 
     setState(() {
-      if (widget.enableRotate)
-        _rotation = (_previousRotation + details.rotation).clamp(-pi, pi);
+      if (widget.enableRotate){
+      /*  print('_previousRotation: ' + _previousRotation.toString());
+        print('_rotation: ' + _rotation.toString());
+        print('details.rotation: ' + details.rotation.toString());*/
+
+        _rotation = (_previousRotation + details.rotation);
+      }
       if (widget.enableZoom && details.scale != 1.0) {
         _zoom = (_previousZoom * details.scale)
             .clamp(widget.minScale, widget.maxScale);
